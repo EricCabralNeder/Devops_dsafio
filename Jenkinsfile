@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'javac DecideTest.java'
+                 echo "Pipeline Usando Jenkinsfile"
             }
         }
         stage('Run') {
