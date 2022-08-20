@@ -1,26 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'python'
-        }
-    }
-
+    agent { docker { image 'maven:3.8.4-openjdk-11-slim' } }
     stages {
         stage('build') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh 'mvn --version'
             }
-        }
-        stage('API Test') {
-            steps {
-                sh 'robot -L trace -d ./logs tests/api'
-            }
-        }
-    }
-    post {
-        always {
-            robot 'logs'
-            chuckNorris()
         }
     }
 }
