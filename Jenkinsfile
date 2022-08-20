@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'javac CidadeTest.java'
+                sh 'javac DecideTest.java'
             }
         }
         stage('Run') {
             steps {
-                sh 'java BubbleSort'
+               echo "Pipeline Usando Jenkinsfile
             }
         }
     }
