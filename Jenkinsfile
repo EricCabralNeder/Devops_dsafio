@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-               echo "Pipeline Usando Jenkinsfile"
+               sh 'mvn source:jar'
             }
         }
     }
