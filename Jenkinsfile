@@ -1,13 +1,10 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
-            steps {
-                 echo "Pipeline Usando Jenkinsfile"
+            agent{
+                docker {image 'maven'}
             }
-        }
-        stage('Run') {
             steps {
                sh 'mvn source:jar'
             }
